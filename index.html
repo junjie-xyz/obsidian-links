@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Obsidian Links turns obsidian:// URIs into clickable HTTPS links for Discord, Slack, GitHub, and other apps that do not link custom protocols."
+    >
+    <meta name="robots" content="index,follow">
+    <meta name="application-name" content="Obsidian Links">
+    <meta name="theme-color" content="#f6f7fb">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Obsidian Links">
+    <meta property="og:title" content="Obsidian Links">
+    <meta
+      property="og:description"
+      content="Create clickable HTTPS gateway links for Obsidian open, search, and note creation URIs."
+    >
+    <meta property="og:url" content="https://obsidian-links.junjie.xyz/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Obsidian Links">
+    <meta
+      name="twitter:description"
+      content="Turn obsidian:// URIs into HTTPS links that work in Discord, Slack, GitHub, and more."
+    >
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+    >
+    <title>Obsidian Links</title>
+    <link rel="canonical" href="https://obsidian-links.junjie.xyz/">
+    <link rel="stylesheet" href="./assets/app.css">
+    <script type="module" src="./assets/pages.js"></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <nav class="site-nav" aria-label="Primary">
+        <a class="brand" href="./">Obsidian Links</a>
+        <div class="nav-links">
+          <a href="./open/#vault=Work&amp;file=Inbox%2FTest.md">Open example</a>
+          <a href="./search/#vault=Work&amp;query=Discord">Search example</a>
+          <a href="https://github.com/junjie-xyz/obsidian-links">GitHub</a>
+        </div>
+      </nav>
+
+      <main>
+        <section class="home-hero" aria-labelledby="home-title">
+          <div class="hero-copy">
+            <p class="eyebrow">Static HTTPS gateway</p>
+            <h1 id="home-title">Obsidian Links</h1>
+            <p class="lede">
+              Convert local Obsidian open and search URIs into clickable HTTPS links.
+            </p>
+          </div>
+
+          <section class="converter-panel" aria-labelledby="converter-title" data-converter>
+            <div class="converter-heading">
+              <h2 id="converter-title">Create HTTPS Link</h2>
+              <p>Paste an Obsidian URI. The generated link uses hash parameters.</p>
+            </div>
+            <form data-converter-form>
+              <label class="field-label" for="obsidian-uri">Obsidian URI</label>
+              <textarea
+                id="obsidian-uri"
+                data-converter-input
+                spellcheck="false"
+                placeholder="obsidian://open?vault=Work&amp;file=Inbox%2FTest.md"
+              ></textarea>
+              <label class="checkbox-row">
+                <input type="checkbox" data-converter-autoopen>
+                <span>Generate auto-open link for open URIs</span>
+              </label>
+              <button class="primary" type="submit">Generate Link</button>
+            </form>
+            <div class="status" data-converter-status data-state="neutral">Paste an Obsidian URI</div>
+            <code class="uri-output" data-converter-output>No HTTPS link generated.</code>
+            <div class="actions">
+              <button type="button" data-converter-copy disabled>Copy HTTPS Link</button>
+              <button type="button" data-converter-open disabled>Open Link Page</button>
+            </div>
+          </section>
+        </section>
+
+        <section class="section usage-section" aria-labelledby="usage-title">
+          <div class="section-header">
+            <p class="eyebrow">Link formats</p>
+            <h2 id="usage-title">Choose a route.</h2>
+            <p>
+              Use the converter first, or compose these hash links directly.
+              Fragments are not sent with the page request.
+            </p>
+          </div>
+          <div class="route-list" aria-label="Supported HTTPS routes">
+            <div class="route-row">
+              <div>
+                <strong>Open note</strong>
+                <span>Review first</span>
+              </div>
+              <code>https://obsidian-links.junjie.xyz/open/#vault=Work&amp;file=Inbox%2FTest</code>
+            </div>
+            <div class="route-row">
+              <div>
+                <strong>Auto-open note</strong>
+                <span>Same route, automatic attempt</span>
+              </div>
+              <code>https://obsidian-links.junjie.xyz/open/#vault=Work&amp;file=Inbox%2FTest&amp;autoopen=1</code>
+            </div>
+            <div class="route-row">
+              <div>
+                <strong>Search</strong>
+                <span>Review first</span>
+              </div>
+              <code>https://obsidian-links.junjie.xyz/search/#vault=Work&amp;query=Discord</code>
+            </div>
+            <div class="route-row">
+              <div>
+                <strong>Create note</strong>
+                <span>Official URI action</span>
+              </div>
+              <code>https://obsidian-links.junjie.xyz/new/#vault=Work&amp;name=New%20note</code>
+            </div>
+            <div class="route-row">
+              <div>
+                <strong>Other actions</strong>
+                <span>daily, unique, choose-vault, hook-get-address</span>
+              </div>
+              <code>https://obsidian-links.junjie.xyz/daily/#vault=Work</code>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="security-title">
+          <div class="section-grid">
+            <div>
+              <h2 id="security-title">Security</h2>
+              <p class="lede">This site only builds whitelisted Obsidian actions.</p>
+            </div>
+            <ul class="plain-list">
+              <li>
+                <strong>No arbitrary redirects</strong>
+                Only documented <code>obsidian://</code> actions are generated from whitelisted parameters.
+              </li>
+              <li>
+                <strong>No third-party resources</strong>
+                Pages, scripts, and styles are local static files.
+              </li>
+              <li>
+                <strong>Auto-open is explicit</strong>
+                Automatic launch only happens when the URL includes <code>autoopen=1</code>.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>Created by</span>
+        <a href="https://junjie.xyz">junjie.xyz</a>
+      </footer>
+    </div>
+  </body>
+</html>
