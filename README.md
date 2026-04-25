@@ -4,7 +4,10 @@ A tiny static HTTPS gateway for opening Obsidian notes from Discord, Slack, and 
 
 ## Access
 
-Visit: https://obsidian-links.junjie.xyz/
+Visit either domain:
+
+- https://obsidian-links.junjie.xyz/
+- https://ob.junjie.xyz/
 
 ## Usage
 
