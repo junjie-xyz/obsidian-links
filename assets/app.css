@@ -322,6 +322,21 @@ textarea::placeholder {
   font-size: 0.94rem;
 }
 
+.agent-prompt {
+  margin-top: 2rem;
+}
+
+.agent-prompt h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+}
+
+.agent-prompt p {
+  max-width: 620px;
+  margin-bottom: 0.9rem;
+  color: var(--muted);
+}
+
 .plain-list {
   display: grid;
   gap: 1rem;

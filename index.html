@@ -38,6 +38,7 @@
       <nav class="site-nav" aria-label="Primary">
         <a class="brand" href="./">Obsidian Links</a>
         <div class="nav-links">
+          <a href="#usage">Usage</a>
           <a href="./open/#vault=Work&amp;file=Inbox%2FTest.md">Open example</a>
           <a href="./search/#vault=Work&amp;query=Discord">Search example</a>
           <a href="https://github.com/junjie-xyz/obsidian-links">GitHub</a>
@@ -82,16 +83,24 @@
           </section>
         </section>
 
-        <section class="section usage-section" aria-labelledby="usage-title">
+        <section class="section usage-section" id="usage" aria-labelledby="usage-title">
           <div class="section-header">
-            <p class="eyebrow">Link formats</p>
-            <h2 id="usage-title">Choose a route.</h2>
+            <p class="eyebrow">Usage</p>
+            <h2 id="usage-title">How to use.</h2>
             <p>
-              Use the converter first, or compose these hash links directly.
-              Fragments are not sent with the page request.
+              Paste an Obsidian URI into the converter, replace the protocol on
+              standard action URIs, or compose hash links directly. Fragments
+              are not sent with the page request.
             </p>
           </div>
           <div class="route-list" aria-label="Supported HTTPS routes">
+            <div class="route-row">
+              <div>
+                <strong>Direct replacement</strong>
+                <span>Standard action URIs only</span>
+              </div>
+              <code>obsidian://open?vault=Work&amp;file=Inbox%2FTest -> https://obsidian-links.junjie.xyz/open?vault=Work&amp;file=Inbox%2FTest</code>
+            </div>
             <div class="route-row">
               <div>
                 <strong>Open note</strong>
@@ -127,6 +136,26 @@
               </div>
               <code>https://obsidian-links.junjie.xyz/daily/#vault=Work</code>
             </div>
+          </div>
+          <div class="agent-prompt" aria-labelledby="agent-prompt-title">
+            <h3 id="agent-prompt-title">Agent prompt</h3>
+            <p>
+              Give this to an agent when you want it to generate a compatible
+              link.
+            </p>
+            <pre class="code-sample"><code>Generate an Obsidian Links HTTPS gateway URL for an Obsidian URI.
+
+Rules:
+- Prefer hash parameters: https://obsidian-links.junjie.xyz/{action}/#{params}
+- For standard action URIs, direct protocol replacement is also valid: obsidian://{action}?{params} -> https://obsidian-links.junjie.xyz/{action}?{params}
+- Do not directly replace shorthand URIs such as obsidian://vault/... or obsidian:///...
+- URL-encode parameter values. Encode spaces as %20 and slashes in file values as %2F.
+- Supported actions: open, new, daily, unique, search, choose-vault, hook-get-address.
+- Do not invent real vault names, note names, local paths, or personal data.
+- Do not generate arbitrary redirects or unsupported parameters.
+
+Example:
+obsidian://open?vault=Work&amp;file=Inbox%2FTest -> https://obsidian-links.junjie.xyz/open/#vault=Work&amp;file=Inbox%2FTest</code></pre>
           </div>
         </section>
 
