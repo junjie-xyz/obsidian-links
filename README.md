@@ -2,6 +2,10 @@
 
 A tiny static HTTPS gateway for opening Obsidian notes from Discord, Slack, and other apps that do not render `obsidian://` links as clickable links.
 
+## Access
+
+Visit: https://obsidian-links.junjie.xyz/
+
 ## Usage
 
 Open note:
