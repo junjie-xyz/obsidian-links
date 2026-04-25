@@ -30,8 +30,8 @@
     >
     <title>Obsidian Links</title>
     <link rel="canonical" href="https://obsidian-links.junjie.xyz/">
-    <link rel="stylesheet" href="./assets/app.css">
-    <script type="module" src="./assets/pages.js"></script>
+    <link rel="stylesheet" href="./assets/app.css?v=20260425120918">
+    <script type="module" src="./assets/pages.js?v=20260425120918"></script>
   </head>
   <body>
     <div class="site-shell">
@@ -151,6 +151,7 @@ Rules:
 - Do not directly replace shorthand URIs such as obsidian://vault/... or obsidian:///...
 - URL-encode parameter values. Encode spaces as %20 and slashes in file values as %2F.
 - Supported actions: open, new, daily, unique, search, choose-vault, hook-get-address.
+- Add autoopen=1 only when the user explicitly wants the gateway page to attempt opening Obsidian automatically. It controls the HTTPS gateway page and is not part of the obsidian:// URI.
 - Do not invent real vault names, note names, local paths, or personal data.
 - Do not generate arbitrary redirects or unsupported parameters.
 

@@ -1,4 +1,4 @@
-import { buildGatewayUrl, createLinkState, parseObsidianUri } from "./obsidian-links.js";
+import { buildGatewayUrl, createLinkState, parseObsidianUri } from "./obsidian-links.js?v=20260425120918";
 
 const PAGE_CONFIG = {
   open: {
