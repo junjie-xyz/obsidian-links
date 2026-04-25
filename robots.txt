@@ -1,11 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /open/
-Disallow: /search/
-Disallow: /new/
-Disallow: /daily/
-Disallow: /unique/
-Disallow: /choose-vault/
-Disallow: /hook-get-address/
 
 Sitemap: https://obsidian-links.junjie.xyz/sitemap.xml
