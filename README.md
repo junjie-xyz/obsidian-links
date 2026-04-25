@@ -1,6 +1,12 @@
-# Obsidian Links
+# Obsidian Links: HTTPS Gateway for obsidian:// URIs
 
-A tiny static HTTPS gateway for opening Obsidian notes from Discord, Slack, and other apps that do not render `obsidian://` links as clickable links.
+Obsidian Links is a static HTTPS gateway and Obsidian URI link generator. It turns `obsidian://` links into reviewable HTTPS links for Discord, Slack, GitHub, issue trackers, documentation, and other apps that do not make custom protocol links clickable.
+
+- Convert `obsidian://open`, `obsidian://search`, and `obsidian://new` URIs into HTTPS links.
+- Share clickable Obsidian note links in Discord, Slack, GitHub, docs, and agent workflows.
+- Review the vault, file, query, or note name before opening Obsidian.
+- Use hash parameters so note details are not sent in server-side page requests.
+- Run as a static GitHub Pages site with no analytics, fonts, CDN assets, or arbitrary redirects.
 
 ## Access
 
@@ -9,7 +15,7 @@ Visit either domain:
 - https://obsidian-links.junjie.xyz/
 - https://ob.junjie.xyz/
 
-## Usage
+## Obsidian URI Link Generator Usage
 
 Open note:
 
@@ -66,13 +72,19 @@ Hash parameters take priority over query strings.
 
 The home page also includes a local converter. Paste a documented `obsidian://` URI to generate a clickable HTTPS link.
 
+## When to Use This
+
+Use Obsidian Links when you want to share an Obsidian note, search, or note creation action in an app that shows `obsidian://` URIs as plain text instead of clickable links.
+
+Common places include Discord, Slack, GitHub issues, pull requests, documentation pages, and agent-generated notes.
+
 ## Why Hash Parameters?
 
 URL fragments are not sent to the server when requesting the page, so note names are less likely to appear in server-side request logs.
 
 Fragments are not private. They can still appear in Discord messages, the browser address bar, browser history, screenshots, and local logs.
 
-## Supported Actions
+## Supported Obsidian URI Actions
 
 Supported routes mirror documented Obsidian URI actions:
 
@@ -86,7 +98,7 @@ Supported routes mirror documented Obsidian URI actions:
 
 `autoopen=1` may be added to any route hash to attempt opening Obsidian when the page loads.
 
-## Security
+## Privacy and Security
 
 This project does not support arbitrary target URLs.
 
@@ -117,7 +129,9 @@ The home page is indexable as the product page for this tool.
 
 Generated gateway routes are marked `noindex,nofollow`, and `robots.txt` disallows those route directories to avoid encouraging indexing of note-specific links.
 
-## GitHub Pages Deployment
+The indexable home page targets searches around Obsidian URI links, clickable Obsidian links, Obsidian HTTPS gateway links, and sharing Obsidian notes in apps that do not support custom protocols.
+
+## Deploy Your Own Obsidian HTTPS Gateway
 
 1. Push this repository to GitHub.
 2. Open `Settings -> Pages`.
