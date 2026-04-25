@@ -9,7 +9,7 @@
     >
     <meta name="robots" content="index,follow">
     <meta name="application-name" content="Obsidian Links">
-    <meta name="theme-color" content="#f6f7fb">
+    <meta name="theme-color" content="#f5f1e8">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Obsidian Links">
     <meta property="og:title" content="Obsidian Links">
@@ -39,8 +39,8 @@
         <a class="brand" href="./">Obsidian Links</a>
         <div class="nav-links">
           <a href="#usage">Usage</a>
-          <a href="./open/#vault=Work&amp;file=Inbox%2FTest.md">Open example</a>
-          <a href="./search/#vault=Work&amp;query=Discord">Search example</a>
+          <a href="./open/#vault=DemoVault&amp;file=Inbox%2FTest.md">Open example</a>
+          <a href="./search/#vault=DemoVault&amp;query=Example%20query">Search example</a>
           <a href="https://github.com/junjie-xyz/obsidian-links">GitHub</a>
         </div>
       </nav>
@@ -51,7 +51,7 @@
             <p class="eyebrow">Static HTTPS gateway</p>
             <h1 id="home-title">Obsidian Links</h1>
             <p class="lede">
-              Convert local Obsidian open and search URIs into clickable HTTPS links.
+              Convert Obsidian URIs into reviewable HTTPS links.
             </p>
           </div>
 
@@ -66,11 +66,11 @@
                 id="obsidian-uri"
                 data-converter-input
                 spellcheck="false"
-                placeholder="obsidian://open?vault=Work&amp;file=Inbox%2FTest.md"
+                placeholder="obsidian://open?vault=DemoVault&amp;file=Inbox%2FTest.md"
               ></textarea>
               <label class="checkbox-row">
                 <input type="checkbox" data-converter-autoopen>
-                <span>Generate auto-open link for open URIs</span>
+                <span>Attempt auto-open on the generated page</span>
               </label>
               <button class="primary" type="submit">Generate Link</button>
             </form>
@@ -99,46 +99,46 @@
                 <strong>Direct replacement</strong>
                 <span>Standard action URIs only</span>
               </div>
-              <code>obsidian://open?vault=Work&amp;file=Inbox%2FTest -> https://obsidian-links.junjie.xyz/open?vault=Work&amp;file=Inbox%2FTest</code>
+              <code>obsidian://open?vault=DemoVault&amp;file=Inbox%2FTest -> https://obsidian-links.junjie.xyz/open?vault=DemoVault&amp;file=Inbox%2FTest</code>
             </div>
             <div class="route-row">
               <div>
                 <strong>Open note</strong>
                 <span>Review first</span>
               </div>
-              <code>https://obsidian-links.junjie.xyz/open/#vault=Work&amp;file=Inbox%2FTest</code>
+              <code>https://obsidian-links.junjie.xyz/open/#vault=DemoVault&amp;file=Inbox%2FTest</code>
             </div>
             <div class="route-row">
               <div>
                 <strong>Auto-open note</strong>
                 <span>Same route, automatic attempt</span>
               </div>
-              <code>https://obsidian-links.junjie.xyz/open/#vault=Work&amp;file=Inbox%2FTest&amp;autoopen=1</code>
+              <code>https://obsidian-links.junjie.xyz/open/#vault=DemoVault&amp;file=Inbox%2FTest&amp;autoopen=1</code>
             </div>
             <div class="route-row">
               <div>
                 <strong>Search</strong>
                 <span>Review first</span>
               </div>
-              <code>https://obsidian-links.junjie.xyz/search/#vault=Work&amp;query=Discord</code>
+              <code>https://obsidian-links.junjie.xyz/search/#vault=DemoVault&amp;query=Example%20query</code>
             </div>
             <div class="route-row">
               <div>
                 <strong>Create note</strong>
                 <span>Official URI action</span>
               </div>
-              <code>https://obsidian-links.junjie.xyz/new/#vault=Work&amp;name=New%20note</code>
+              <code>https://obsidian-links.junjie.xyz/new/#vault=DemoVault&amp;name=Example%20Note</code>
             </div>
             <div class="route-row">
               <div>
                 <strong>Other actions</strong>
                 <span>daily, unique, choose-vault, hook-get-address</span>
               </div>
-              <code>https://obsidian-links.junjie.xyz/daily/#vault=Work</code>
+              <code>https://obsidian-links.junjie.xyz/daily/#vault=DemoVault</code>
             </div>
           </div>
-          <div class="agent-prompt" aria-labelledby="agent-prompt-title">
-            <h3 id="agent-prompt-title">Agent prompt</h3>
+          <details class="agent-prompt">
+            <summary id="agent-prompt-title">Agent prompt</summary>
             <p>
               Give this to an agent when you want it to generate a compatible
               link.
@@ -155,8 +155,8 @@ Rules:
 - Do not generate arbitrary redirects or unsupported parameters.
 
 Example:
-obsidian://open?vault=Work&amp;file=Inbox%2FTest -> https://obsidian-links.junjie.xyz/open/#vault=Work&amp;file=Inbox%2FTest</code></pre>
-          </div>
+obsidian://open?vault=DemoVault&amp;file=Inbox%2FTest -> https://obsidian-links.junjie.xyz/open/#vault=DemoVault&amp;file=Inbox%2FTest</code></pre>
+          </details>
         </section>
 
         <section class="section" aria-labelledby="security-title">

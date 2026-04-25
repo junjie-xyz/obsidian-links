@@ -11,43 +11,43 @@ Visit: https://obsidian-links.junjie.xyz/
 Open note:
 
 ```text
-https://obsidian-links.junjie.xyz/open/#vault=Work&file=Inbox%2FTest.md
+https://obsidian-links.junjie.xyz/open/#vault=DemoVault&file=Inbox%2FTest.md
 ```
 
 Generated URI:
 
 ```text
-obsidian://open?vault=Work&file=Inbox%2FTest.md
+obsidian://open?vault=DemoVault&file=Inbox%2FTest.md
 ```
 
 Search:
 
 ```text
-https://obsidian-links.junjie.xyz/search/#vault=Work&query=Discord
+https://obsidian-links.junjie.xyz/search/#vault=DemoVault&query=Example%20query
 ```
 
 Generated URI:
 
 ```text
-obsidian://search?vault=Work&query=Discord
+obsidian://search?vault=DemoVault&query=Example%20query
 ```
 
 Create note:
 
 ```text
-https://obsidian-links.junjie.xyz/new/#vault=Work&name=New%20note
+https://obsidian-links.junjie.xyz/new/#vault=DemoVault&name=Example%20Note
 ```
 
 Generated URI:
 
 ```text
-obsidian://new?vault=Work&name=New%20note
+obsidian://new?vault=DemoVault&name=Example%20Note
 ```
 
 Auto-open:
 
 ```text
-https://obsidian-links.junjie.xyz/open/#vault=Work&file=Inbox%2FTest.md&autoopen=1
+https://obsidian-links.junjie.xyz/open/#vault=DemoVault&file=Inbox%2FTest.md&autoopen=1
 ```
 
 The `autoopen=1` parameter controls the gateway page. It is not included in the generated `obsidian://` URI.
@@ -55,8 +55,8 @@ The `autoopen=1` parameter controls the gateway page. It is not included in the 
 Query strings are also supported for debugging:
 
 ```text
-https://obsidian-links.junjie.xyz/open/?vault=Work&file=Inbox%2FTest.md
-https://obsidian-links.junjie.xyz/search/?vault=Work&query=Discord
+https://obsidian-links.junjie.xyz/open/?vault=DemoVault&file=Inbox%2FTest.md
+https://obsidian-links.junjie.xyz/search/?vault=DemoVault&query=Example%20query
 ```
 
 Hash parameters take priority over query strings.

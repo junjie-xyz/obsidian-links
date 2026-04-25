@@ -99,7 +99,7 @@ function renderLinkPage(root, action, config) {
     return;
   }
 
-  status.textContent = "Ready";
+  status.textContent = "Ready to open";
   status.dataset.state = "ready";
   uri.textContent = state.obsidianUri;
   openButton.disabled = false;
@@ -206,7 +206,7 @@ function initConverter() {
       return;
     }
 
-    status.textContent = "Ready";
+    status.textContent = "Ready to copy";
     status.dataset.state = "ready";
     output.textContent = gatewayUrl;
     setDisabled(false);
