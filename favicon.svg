@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Obsidian Links">
+  <title>Obsidian Links</title>
+  <rect width="512" height="512" rx="112" fill="#D9D2C6"/>
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="#FCF8F0"/>
+  <path
+    fill="#973E16"
+    d="M212.6 133.2L382.1 223.4A88 88 28 0 1 418.5 342.4A88 88 28 0 1 299.4 378.8L129.9 288.6A88 88 28 0 1 93.5 169.6A88 88 28 0 1 212.6 133.2Z"
+  />
+  <path
+    fill="#FCF8F0"
+    d="M192.5 183.7L351.4 268.2A34 34 28 0 1 365.5 314.2A34 34 28 0 1 319.5 328.3L160.6 243.8A34 34 28 0 1 146.5 197.8A34 34 28 0 1 192.5 183.7Z"
+  />
+</svg>
