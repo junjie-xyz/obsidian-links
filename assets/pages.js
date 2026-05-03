@@ -1,4 +1,4 @@
-import { buildGatewayUrl, createLinkState, parseObsidianUri } from "./obsidian-links.js?v=20260425120918";
+import { buildGatewayUrl, createLinkState, parseObsidianUri } from "./obsidian-links.js?v=20260503230349";
 
 const PAGE_CONFIG = {
   open: {
@@ -47,13 +47,21 @@ function appendDetail(list, label, value) {
   list.append(term, description);
 }
 
-function setButtonCopied(button) {
+function setButtonText(button, text) {
   const originalText = button.textContent;
 
-  button.textContent = "Copied";
+  button.textContent = text;
   window.setTimeout(() => {
     button.textContent = originalText;
   }, 1400);
+}
+
+function setButtonCopied(button) {
+  setButtonText(button, "Copied");
+}
+
+function setButtonFailed(button) {
+  setButtonText(button, "Copy failed");
 }
 
 async function copyText(text) {
@@ -254,5 +262,22 @@ function initConverter() {
   });
 }
 
+function initAgentPromptCopy() {
+  const copyButton = document.querySelector("[data-agent-prompt-copy]");
+  const prompt = document.querySelector("[data-agent-prompt-text]");
+
+  if (!copyButton || !prompt) return;
+
+  copyButton.addEventListener("click", async () => {
+    try {
+      await copyText(prompt.textContent.trim());
+      setButtonCopied(copyButton);
+    } catch {
+      setButtonFailed(copyButton);
+    }
+  });
+}
+
 initLinkPage();
 initConverter();
+initAgentPromptCopy();

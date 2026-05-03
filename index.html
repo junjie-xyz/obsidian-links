@@ -38,8 +38,8 @@
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="./assets/app.css?v=20260425120918">
-    <script type="module" src="./assets/pages.js?v=20260425120918"></script>
+    <link rel="stylesheet" href="./assets/app.css?v=20260503230349">
+    <script type="module" src="./assets/pages.js?v=20260503230349"></script>
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -163,7 +163,10 @@
               Give this to an agent when you want it to generate a compatible
               link.
             </p>
-            <pre class="code-sample"><code>Generate an Obsidian Links HTTPS gateway URL for an Obsidian URI.
+            <div class="actions">
+              <button type="button" data-agent-prompt-copy>Copy Agent Prompt</button>
+            </div>
+            <pre class="code-sample"><code data-agent-prompt-text>Generate an Obsidian Links HTTPS gateway URL for an Obsidian URI.
 
 Rules:
 - Prefer hash parameters: https://obsidian-links.junjie.xyz/{action}/#{params}
